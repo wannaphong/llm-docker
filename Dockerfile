@@ -18,8 +18,9 @@ RUN mkdir -p ~/miniconda3 \
 
 # Setting the PATH environment variable for conda
 ENV PATH /root/miniconda3/bin:$PATH
+ENV CUDNN_FRONTEND_PATH /root/cudnn-frontend/include
 
 
 # Clone necessary repositories to the home directory
 RUN git clone https://github.com/NVIDIA/cudnn-frontend.git ~/cudnn-frontend \
-    && git clone https://github.com/karpathy/llm.c.git ~/llm.c
+    && git clone https://github.com/karpathy/llm.c.git ~/llmc

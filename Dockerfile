@@ -1,5 +1,5 @@
 # Specify the correct NVIDIA CUDA image with CUDNN and development tools
-FROM nvidia/cuda:12.4.1-cudnn-devel-ubuntu22.04
+FROM nvidia/cuda:12.2.2-cudnn-devel-ubuntu22.04
 
 # Install system packages
 RUN apt update && apt install -y \
@@ -20,8 +20,7 @@ RUN mkdir -p ~/miniconda3 \
 ENV PATH /root/miniconda3/bin:$PATH
 ENV CUDNN_FRONTEND_PATH /root/cudnn-frontend/include
 
-
 # Clone necessary repositories to the home directory
 RUN git clone https://github.com/NVIDIA/cudnn-frontend.git ~/cudnn-frontend \
-    && git clone https://github.com/karpathy/llm.c.git ~/llmc
+    && git clone https://github.com/wannaphong/llm.c ~/llmc
 WORKDIR ~/llmc

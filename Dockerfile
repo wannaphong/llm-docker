@@ -1,5 +1,5 @@
 # Specify the correct NVIDIA CUDA image with CUDNN and development tools
-FROM nvidia/cuda:12.2.2-cudnn-devel-ubuntu22.04
+FROM nvidia/cuda:12.2.2-cudnn8-devel-ubuntu22.04
 
 # Install system packages
 RUN apt update && apt install -y \

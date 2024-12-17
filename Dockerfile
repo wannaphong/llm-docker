@@ -21,6 +21,6 @@ ENV PATH /root/miniconda3/bin:$PATH
 ENV CUDNN_FRONTEND_PATH /root/cudnn-frontend/include
 
 # Clone necessary repositories to the home directory
-RUN git clone https://github.com/NVIDIA/cudnn-frontend.git ~/cudnn-frontend \
-    && git clone https://github.com/wannaphong/llm.c ~/llmc
+RUN git clone https://github.com/NVIDIA/cudnn-frontend.git ~/cudnn-frontend && cd cudnn-frontend && git checkout de355c7094af70467f2b264f531ab5c5f4401c42 && cd ..
+RUN git clone https://github.com/wannaphong/llm.c ~/llmc
 WORKDIR ~/llmc

@@ -7,7 +7,9 @@ RUN apt update && apt install -y \
     wget \
     openmpi-bin \
     openmpi-doc \
-    libopenmpi-dev
+    libopenmpi-dev \
+    zip \
+    unzip
 
 # Install Miniconda
 RUN mkdir -p ~/miniconda3 \

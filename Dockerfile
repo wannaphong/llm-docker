@@ -10,12 +10,14 @@ RUN apt update && apt install -y \
     libopenmpi-dev \
     zip \
     unzip
-
-# Install Miniconda
+RUN mkdir /workspace
 RUN useradd -u 8877 wannaphongp
+RUN chown -R wannaphongp:wannaphongp /workspace
+# Install Miniconda
+
 # Change to non-root privilege
 USER wannaphongp
-RUN mkdir /workspace
+
 WORKDIR /workspace
 RUN mkdir -p /workspace/miniconda3 \
     && wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O /workspace/miniconda3/miniconda.sh \
